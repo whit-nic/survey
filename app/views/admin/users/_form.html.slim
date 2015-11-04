@@ -1,0 +1,10 @@
+= simple_form_for([:admin,@user], html:{ class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
+  = f.error_notification
+  
+  .form-inputs
+    = f.input :username
+    = f.input :name
+    = f.input :password
+    = f.input :password_confirmation
+  .form-actions
+    = f.button :submit
