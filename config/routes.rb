@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
   namespace :admin do
     resources :users
+    resources :categories
     root 'users#index'
   end
   resource :profile, only: [:show, :update] do

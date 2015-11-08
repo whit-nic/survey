@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    models:
+      category: 大题
+    attributes:
+      category:
+        name: 名称
+        order_no: 顺序号

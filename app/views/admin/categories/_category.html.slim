@@ -1,0 +1,5 @@
+tr
+  td = category.name
+  td = category.order_no
+  td = link_to "编辑", edit_admin_category_path(category)
+  td = link_to '删除', [:admin, category], data: {:confirm => '确定要删除吗?'}, :method => :delete

@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    models:
+      question: 问题
+    attributes:
+      question:
+        name: 名称
+        field_type: 问题类型

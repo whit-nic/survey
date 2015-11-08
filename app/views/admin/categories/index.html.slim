@@ -1,0 +1,12 @@
+- if @categories.present?
+  table.table.table-bordered.table-hover.table-stripped
+    thead
+      tr
+        th 题目
+        th 顺序号
+        th 编辑
+        th 删除
+    tbody
+      = render @categories
+    
+== link_to "新建大题", new_admin_category_path, class: "btn btn-primary"

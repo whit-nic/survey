@@ -1,0 +1,10 @@
+.nested-fields.question.row
+  .col-md-8
+    = f.text_field :name, class: "form-control"
+  .col-md-2
+    = f.select :field_type, options_for_select({"频率五选一" => 'rythem', "符合三选一" => 'conform3', 
+                            "符合五选一" => 'conform5', "时间八选一" => 'time8', 
+                            "符合四选一" => 'conform4', "进步四选一" => "progress4",
+                            "满意六选一" => 'satisfy6', "认同五选一" => "agree5"}, :selected => f.object.field_type), {include_blank: false}, {class: 'form-control'}
+  .col-md-2
+    = link_to_remove_association "删除问题", f,{ class: 'btn btn-danger' }
