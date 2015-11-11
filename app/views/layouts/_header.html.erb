@@ -6,6 +6,7 @@
         <% if logged_in? %>
           <li><%= link_to "问卷题目", admin_categories_path %></li>
           <li><%= link_to "调查结果", admin_questionnaires_path %></li>
+          <li><%= link_to "导出csv", admin_root_path(format: "csv") %></li>
           <li><%= link_to "退出", logout_path, method: "delete" %></li>
         <% else %>
           <li><%= link_to "登录", login_path %></li>
