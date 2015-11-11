@@ -1,0 +1,9 @@
+table.table.table-bordered.table-hover.table-stripped
+  thead
+    tr
+      th id
+      th IP
+      th 时间
+  tbody
+    = render @questionnaires
+= paginate @questionnaires

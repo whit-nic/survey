@@ -39,6 +39,6 @@ class Admin::CategoriesController < Admin::BaseController
     end
 
     def category_params
-      params.require(:category).permit(:name, :order_no, questions_attributes: [:id, :name, :field_type, :category_id, :required, :_destroy])
+      params.require(:category).permit(:name, :order_no, questions_attributes: [:id, :name, :field_type, :category_id, :required, :question_no, :_destroy])
     end
 end

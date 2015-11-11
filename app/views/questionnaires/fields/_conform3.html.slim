@@ -1,0 +1,3 @@
+div.form-group
+  = f.label question.name
+  = f.select question.question_no, options_for_select({"不符合" => '1', "一般" => '2', "符合" => '3'}),{}, {class: "form-control"}

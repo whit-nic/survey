@@ -1,0 +1,10 @@
+.row
+  .col-md-12
+    = simple_form_for(@questionnaire, html:{ class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
+      - f.fields_for :data do |builder|
+        - @categories.each do |category|
+          h3 = category.name
+          - category.questions.each do |question|
+            = render "questionnaires/fields/#{question.field_type}.html.slim", question: question, f: builder
+        .form-actions
+          = f.button :submit, value: "提交问卷"

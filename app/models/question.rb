@@ -9,6 +9,7 @@
 #  required    :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  question_no :string
 #
 # Indexes
 #
@@ -18,4 +19,5 @@
 class Question < ActiveRecord::Base
   belongs_to :category
   validates :name, presence: true
+  validates :question_no, presence: true
 end

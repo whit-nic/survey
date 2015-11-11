@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    models:
+      questionnaire: 问卷
+    attributes:
+      questionnaire:
+        name: 名称
+        field_type: 问题类型

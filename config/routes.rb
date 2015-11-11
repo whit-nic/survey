@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+  resources :questionnaires, only: [:new, :create]
+
   # get 'sessions/new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  root 'sessions#new'
+  root 'questionnaires#new'
   namespace :admin do
     resources :users
     resources :categories
-    root 'users#index'
+    resources :questionnaires, only: [:index]
+    root 'questionnaires#index'
   end
   resource :profile, only: [:show, :update] do
     collection do
