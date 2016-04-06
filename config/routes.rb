@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :questionnaires, only: [:new, :create]
+  mount RuCaptcha::Engine => "/rucaptcha"
 
   # get 'sessions/new'
   get    'login'   => 'sessions#new'

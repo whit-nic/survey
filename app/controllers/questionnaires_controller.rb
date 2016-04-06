@@ -1,5 +1,6 @@
 class QuestionnairesController < ApplicationController
   layout 'frontend'
+  # caches_page :new
   def new
     @questionnaire = Questionnaire.new
     @categories = Category.order(:order_no)
@@ -7,10 +8,11 @@ class QuestionnairesController < ApplicationController
 
   def create
     @questionnaire = Questionnaire.new(question_params)
-    if @questionnaire.save
+    if verify_rucaptcha?(@questionnaire) && @questionnaire.save
       render 'success'
     else
-      render 'new'
+      flash[:danger] = "验证码不正确或者您的输入有误！"
+      redirect_to root_path
     end
   end
 

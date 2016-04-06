@@ -39,6 +39,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 # redis cache
 gem 'redis-rails'
+gem 'redis-namespace'
+# gem 'actionpack-page_caching'
+# captcha
+gem 'rucaptcha'
 # 简单表单
 gem 'simple_form'
 # slim
@@ -72,6 +76,7 @@ group :development do
   gem 'capistrano-rails'
   # annotate model
   gem 'annotate'
+  gem "rack-mini-profiler"
 end
 
 group :production do
