@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110072537) do
+ActiveRecord::Schema.define(version: 20160406101028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,19 @@ ActiveRecord::Schema.define(version: 20151110072537) do
   create_table "questionnaires", force: :cascade do |t|
     t.inet     "ip"
     t.hstore   "data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "gender"
+    t.integer  "grade"
+    t.integer  "local"
+    t.integer  "hope"
+    t.integer  "learn_status"
+    t.integer  "edu"
+    t.integer  "income"
+    t.string   "school"
+    t.integer  "position"
+    t.integer  "school_position"
+    t.integer  "known"
   end
 
   add_index "questionnaires", ["data"], name: "index_questionnaires_on_data", using: :gin

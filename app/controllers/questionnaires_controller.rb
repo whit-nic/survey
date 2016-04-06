@@ -11,14 +11,24 @@ class QuestionnairesController < ApplicationController
     if verify_rucaptcha?(@questionnaire) && @questionnaire.save
       render 'success'
     else
-      flash[:danger] = "验证码不正确或者您的输入有误！"
+      flash[:danger] = "您的输入有误或者验证码不正确！"
       redirect_to root_path
     end
   end
 
   private
     def question_params
-      params.require(:questionnaire).permit().merge(ip: request.remote_ip).tap do |whitelisted|
+      params.require(:questionnaire).permit(:gender,
+      :grade,
+      :local,
+      :hope,
+      :learn_status,
+      :edu,
+      :income,
+      :school,
+      :position,
+      :school_position,
+      :known).merge(ip: request.remote_ip).tap do |whitelisted|
         whitelisted[:data] = params[:questionnaire][:data] if params[:questionnaire][:data]
       end
     end

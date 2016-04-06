@@ -6,3 +6,14 @@ zh-CN:
       questionnaire:
         name: 名称
         field_type: 问题类型
+        gender: 您的性别：
+        grade: 您现在的年级是：
+        local: 您的家庭所在地是：
+        hope: 父母对您学业的期望水平：
+        learn_status: 您目前在班上的学习情况大概是：
+        edu: 您父亲或母亲的最高文化程度是：
+        income: 您的家庭的经济状况大概是：
+        school: 您所在的学校是：
+        position: 您所在的学校位于：
+        school_position: 您所在的学校地处
+        known: 您所在的学校是否是国家示范（骨干）高职院校

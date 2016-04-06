@@ -2,11 +2,22 @@
 #
 # Table name: questionnaires
 #
-#  id         :integer          not null, primary key
-#  ip         :inet
-#  data       :hstore
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  ip              :inet
+#  data            :hstore
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  gender          :integer
+#  grade           :integer
+#  local           :integer
+#  hope            :integer
+#  learn_status    :integer
+#  edu             :integer
+#  income          :integer
+#  school          :string
+#  position        :integer
+#  school_position :integer
+#  known           :integer
 #
 # Indexes
 #
