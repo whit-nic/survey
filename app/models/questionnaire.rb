@@ -32,7 +32,7 @@ class Questionnaire < ActiveRecord::Base
 
   def self.to_csv(options = {})
     output = CSV.generate(options) do |csv|
-      if last.present?
+      if last.present? && last.data.present?
         basic_info_header = new.attributes.keys - ["id", "ip", "data", "created_at", "updated_at"]
         header = ["ID", "IP", "投票时间"] + last.data.keys + basic_info_header
         csv <<  header
