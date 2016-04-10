@@ -11,7 +11,7 @@ class QuestionnairesController < ApplicationController
     if verify_rucaptcha?(@questionnaire) && @questionnaire.save
       render 'success'
     else
-      flash[:danger] = "您的输入有误或者验证码不正确！"
+      flash[:danger] = "问卷调查没有填写完整或者验证码不正确！"
       redirect_to root_path
     end
   end

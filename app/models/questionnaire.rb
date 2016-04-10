@@ -27,10 +27,11 @@
 require 'csv'
 
 class Questionnaire < ActiveRecord::Base
-  validates :school,  presence: true
   scope :where_any, ->(key, value) { where("data @> hstore(?, ?)", key, value) }
   validate :validate_data
-  
+  validates_presence_of :gender, :grade, :local, :hope, :learn_status, :edu,
+                        :income, :school, :school, :position, :school_position, :known
+
   def self.to_csv(options = {})
     output = CSV.generate(options) do |csv|
       if last.present? && last.data.present?
@@ -48,10 +49,14 @@ class Questionnaire < ActiveRecord::Base
   end
 
   def validate_data
-    Question.all.each do |question|
-      if data[question.question_no].blank?
-        errors.add question.name, "不能为空字符"
+    if data.present?
+      Question.all.each do |question|
+        if data[question.question_no].blank?
+          errors.add question.name, "不能为空字符。"
+        end
       end
+    else
+      errors[:base] << "没有回答任何调查问题。"
     end
   end
 
