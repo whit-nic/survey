@@ -1,3 +1,3 @@
 div.form-group
-  = f.label question.name
-  = f.select question.question_no, options_for_select({"没有进步" => '1', "较小进步" => '2', "较大进步" => '3', "很大进步" => '4'}),{}, {class: "form-control"}
+  = f.input question.question_no, collection: {"没有进步" => '1', "较小进步" => '2', "较大进步" => '3', "很大进步" => '4'}, 
+            as: :radio_buttons, label: question.name, class: "form-control"

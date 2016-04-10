@@ -1,5 +1,5 @@
 div.form-group
-  = f.label question.name
-  = f.select question.question_no, options_for_select({"0" => '1', "1-5" => '2', 
+  = f.input question.question_no, collection: {"0" => '1', "1-5" => '2', 
              "6-10" => '3', "11-15" => '4', "16-20" => '5', "21-25" => '6', "26-30" => '7',
-             "30以上" => '8'}),{}, {class: "form-control"}
+             "30以上" => '8'}, 
+            as: :radio_buttons, label: question.name, class: "form-control"

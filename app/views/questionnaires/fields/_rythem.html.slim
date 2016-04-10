@@ -1,5 +1,4 @@
 div.form-group
-  = f.label question.name
-  = f.select question.question_no, options_for_select({"极少" => '1',
-             "较少" => '2', "一般" => '3', "较多" => '4', "经常" => '5'}),
-             {}, {class: "form-control"}
+  = f.input question.question_no, collection: {"极少" => '1',
+             "较少" => '2', "一般" => '3', "较多" => '4', "经常" => '5'}, 
+             as: :radio_buttons, label: question.name, class: "form-control"
