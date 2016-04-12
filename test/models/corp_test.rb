@@ -21,6 +21,7 @@
 #  q16        :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  ip         :inet
 #
 
 require 'test_helper'

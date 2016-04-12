@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :questionnaires, only: [:new, :create]
+  resources :corps
   mount RuCaptcha::Engine => "/rucaptcha"
 
   # get 'sessions/new'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
     resources :users
     resources :categories
     resources :questionnaires, only: [:index]
+    resources :corps, only: [:index]
     root 'questionnaires#index'
   end
   resource :profile, only: [:show, :update] do

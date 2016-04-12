@@ -1,0 +1,27 @@
+.row
+  .col-md-12
+    = simple_form_for(@corp) do |f|
+      = f.error_notification
+      
+      .form-inputs
+      = f.input :q1
+      = f.input :q2, collection: [['一产', 1], ['二产', 2], ['三产', 3], ['其他', 4]],as: :radio_buttons
+      = f.input :q3, collection: [['大型企业', 1], ['中型企业', 2], ['小型企业', 3], ['其他', 4]],as: :radio_buttons
+      = f.input :q4, collection: [['是', 1], ['否', 2]],as: :radio_buttons
+      = f.input :q5, collection: [['是', 1], ['否', 2]],as: :radio_buttons
+      = f.input :q6, collection: [['是', 1], ['否', 2]],as: :radio_buttons
+      = f.input :q7, collection: [['是', 1], ['否', 2]],as: :radio_buttons
+      = f.input :q8, collection: [['是', 1], ['否', 2]],as: :radio_buttons
+      = f.input :q9, collection: [['是', 1], ['否', 2]],as: :radio_buttons
+      = f.input :q10, collection: [['是', 1], ['否', 2]],as: :radio_buttons
+      = f.input :q11, collection: [['吻合', 1], ['比较吻合', 2], ['不确定', 3], ['不太吻合', 4], ['不吻合', 5]],as: :radio_buttons
+      = f.input :q12, collection: [['强', 1], ['比较强', 2], ['不确定', 3], ['不太强', 4], ['不强', 5]],as: :radio_buttons
+      = f.input :q13, collection: [['强', 1], ['比较强', 2], ['不确定', 3], ['不太强', 4], ['不强', 5]],as: :radio_buttons
+      = f.input :q14, collection: [['强', 1], ['比较强', 2], ['不确定', 3], ['不太强', 4], ['不强', 5]],as: :radio_buttons
+      = f.input :q15, collection: [['强', 1], ['比较强', 2], ['不确定', 3], ['不太强', 4], ['不强', 5]],as: :radio_buttons
+      = f.input :q16
+      div.form-group
+        = rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码')
+        = rucaptcha_image_tag(alt: 'Captcha')
+      .form-actions
+        = f.button :submit, value: "提交问卷", class: "btn btn-primary btn-block"          
