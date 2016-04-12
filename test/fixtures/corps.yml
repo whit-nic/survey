@@ -1,0 +1,62 @@
+# == Schema Information
+#
+# Table name: corps
+#
+#  id         :integer          not null, primary key
+#  q1         :string
+#  q2         :integer
+#  q3         :integer
+#  q4         :integer
+#  q5         :integer
+#  q6         :integer
+#  q7         :integer
+#  q8         :integer
+#  q9         :integer
+#  q10        :integer
+#  q11        :integer
+#  q12        :integer
+#  q13        :integer
+#  q14        :integer
+#  q15        :integer
+#  q16        :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  q1: MyString
+  q2: 1
+  q3: 1
+  q4: 1
+  q5: 1
+  q6: 1
+  q7: 1
+  q8: 1
+  q9: 
+  q10: 1
+  q11: 1
+  q12: 1
+  q13: 1
+  q14: 1
+  q15: 1
+  q16: MyText
+
+two:
+  q1: MyString
+  q2: 1
+  q3: 1
+  q4: 1
+  q5: 1
+  q6: 1
+  q7: 1
+  q8: 1
+  q9: 
+  q10: 1
+  q11: 1
+  q12: 1
+  q13: 1
+  q14: 1
+  q15: 1
+  q16: MyText
