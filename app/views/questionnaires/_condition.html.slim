@@ -11,5 +11,6 @@ h3 12.基本情况
                                       ['制造、自动化、电子信息类', 5], ['环保、气象与安全类', 6], ['轻纺食品类', 7], ['财经类', 8],
                                       ['公共事业、旅游、文化教育类', 9], ['艺术设计传媒大类', 10], ['公安、法律类 ', 11], ['其他', 12]],as: :radio_buttons, include_blank: false
 = f.input :position, collection: [['东部地区', 1], ['中部地区', 2], ['西部地区', 3]],as: :radio_buttons, include_blank: false
+.small （注：东部地区包括：北京、天津、河北、辽宁、上海、江苏、浙江、福建、山东、广东和海南等11个省市；中部地区包括：山西、吉林、黑龙江、安徽、江西、河南、湖北、湖南等8个省；西部地区包括：重庆、四川、贵州、云南、西藏、陕西、甘肃、青海、宁夏、新疆、广西、内蒙古等12个省、市、自治区。）
 = f.input :school_position, collection: [['乡镇', 1], ['县城', 2], ['地级市', 3], ['省会城市', 4], ['直辖市', 5]],as: :radio_buttons, include_blank: false
 = f.input :known, collection: [['是', 1], ['否', 2], ['不知道', 3]],as: :radio_buttons, include_blank: false
