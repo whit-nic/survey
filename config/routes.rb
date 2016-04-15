@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   mount RuCaptcha::Engine => "/rucaptcha"
 
   # get 'sessions/new'
+  get 'corp' => 'corps#new'
+  get 'school' => 'schools#index'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412073643) do
+ActiveRecord::Schema.define(version: 20160415050713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160412073643) do
     t.integer  "position"
     t.integer  "school_position"
     t.integer  "known"
+    t.integer  "subject_type"
   end
 
   add_index "questionnaires", ["data"], name: "index_questionnaires_on_data", using: :gin

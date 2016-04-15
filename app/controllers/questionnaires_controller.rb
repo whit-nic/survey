@@ -8,10 +8,11 @@ class QuestionnairesController < ApplicationController
 
   def create
     @questionnaire = Questionnaire.new(question_params)
-    if verify_rucaptcha?(@questionnaire) && @questionnaire.save
+    # if verify_rucaptcha?(@questionnaire) && @questionnaire.save
+    if @questionnaire.save
       render 'success'
     else
-      flash[:danger] = "问卷调查没有填写完整或者验证码不正确！"
+      flash[:danger] = "问卷调查没有填写完整！"
       redirect_to root_path
     end
   end

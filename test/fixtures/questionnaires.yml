@@ -18,6 +18,7 @@
 #  position        :integer
 #  school_position :integer
 #  known           :integer
+#  subject_type    :integer
 #
 # Indexes
 #

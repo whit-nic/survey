@@ -8,8 +8,10 @@
           - category.questions.each do |question|
             = render "questionnaires/fields/#{question.field_type}.html.slim", question: question, f: builder
         == render 'condition', f: f
-        div.form-group
-          = rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码')
-          = rucaptcha_image_tag(alt: 'Captcha')
+        .alert.alert-info
+          | 只有全部填写完才能提交问卷。
+        / div.form-group
+        /   = rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码')
+        /   = rucaptcha_image_tag(alt: 'Captcha')
         .form-actions
           = f.button :submit, value: "提交问卷", class: "btn btn-primary btn-block"

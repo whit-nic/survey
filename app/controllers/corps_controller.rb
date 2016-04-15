@@ -7,10 +7,11 @@ class CorpsController < ApplicationController
 
   def create
     @corp = Corp.new(corp_params)
-    if verify_rucaptcha?(@corp) && @corp.save
+    # if verify_rucaptcha?(@corp) && @corp.save
+    if @corp.save
       render 'success'
     else
-      flash[:danger] = "问卷调查没有填写完整或者验证码不正确！"
+      flash[:danger] = "问卷调查没有填写完整！"
       redirect_to new_corp_path
     end
   end
