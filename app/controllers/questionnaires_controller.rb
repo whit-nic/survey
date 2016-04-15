@@ -27,6 +27,7 @@ class QuestionnairesController < ApplicationController
       :edu,
       :income,
       :school,
+      :subject_type,
       :position,
       :school_position,
       :known).merge(ip: request.remote_ip).tap do |whitelisted|

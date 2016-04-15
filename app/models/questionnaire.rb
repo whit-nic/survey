@@ -42,7 +42,7 @@ class Questionnaire < ActiveRecord::Base
         all.each do |survey|
           content = [survey.id, survey.ip, survey.created_at] + survey.data.values + [survey.gender, survey.grade, survey.local, survey.hope,
                   survey.learn_status, survey.edu, survey.income, survey.school,
-                  survey.position, survey.school_position, survey.known]
+                  survey.position, survey.school_position, survey.known, survey.subject_type]
           csv << content
         end
       end
