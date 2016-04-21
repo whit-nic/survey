@@ -1,0 +1,8 @@
+= simple_form_for([:admin,@school], html:{ class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
+  = f.error_notification
+  .row
+    .form-inputs
+      = f.input :name
+      = f.association :province, include_blank: false
+    .col-md-12.form-actions
+      = f.button :submit

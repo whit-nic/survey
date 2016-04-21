@@ -1,0 +1,4 @@
+tr
+  td = province.name
+  td = link_to "编辑", edit_admin_province_path(province)
+  td = link_to '删除', [:admin, province], data: {:confirm => '确定要删除吗?'}, :method => :delete

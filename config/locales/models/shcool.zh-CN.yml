@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    models:
+      school: 院校
+    attributes:
+      school:
+        name: 院校名称
+        province: 省份

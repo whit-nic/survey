@@ -1,0 +1,7 @@
+zh-CN:
+  activerecord:
+    models:
+      province: 省份
+    attributes:
+      province:
+        name: 省份名称

@@ -1,0 +1,45 @@
+<div class="form-group string required corp_q1" id="school">
+  <label class="string required control-label" for="corp_q1">
+    <abbr title="必填">*</abbr> 1.与贵公司合作的院校名称：</label>
+    <div id="school" class="form-group">
+      <div class="col-md-6">
+        <select class="prov_select form-control"></select>
+      </div>
+      <div class="col-md-6">
+        <select class="school_select form-control" name="corp[q1]"></select>
+      </div>
+    </div>
+</div>
+
+<script>
+  (function($){
+    $.fn.citySelect=function(){
+      var prov_select = $("#school .prov_select");
+      var school_select = $("#school .school_select");
+      var prov_init = function () {
+        prov_select.first()[0].options.add(new Option("请选择所在省份", ""));
+        school_select.first()[0].options.add(new Option("请选择所在省份", ""));
+          $.getJSON("/areas.json",function(json){
+          $.each(json,function(i,item){
+            prov_select.first()[0].options.add(new Option(item.name, item.id));
+          });
+        });
+      };
+      prov_select.change(function(){
+        $.getJSON("/areas/"+ $(this).val() + ".json", function(json){
+          var school_select = $("#school .school_select");
+          var school_select_options = $("#school .school_select option");
+          school_select_options.remove();
+          $.each(json, function(i, item){
+            school_select.first()[0].options.add(new Option(item.name, item.name));
+            school_select.trigger('area:load_data_completed');
+          });
+        });
+      });
+      prov_init();
+    };
+  })(jQuery);
+  $(function(){
+    $("#school").citySelect();
+  });
+</script>

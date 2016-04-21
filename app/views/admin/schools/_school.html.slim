@@ -1,0 +1,5 @@
+tr
+  td = school.province.name 
+  td = school.name
+  td = link_to "编辑", edit_admin_school_path(school)
+  td = link_to '删除', [:admin, school], data: {:confirm => '确定要删除吗?'}, :method => :delete

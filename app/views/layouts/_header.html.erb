@@ -5,6 +5,8 @@
         <li><%= link_to "学生问卷", root_path, {target: "_blank"} %></li>
         <li><%= link_to "企业问卷", new_corp_path, {target: "_blank"} %></li>
         <% if logged_in? %>
+          <li><%= link_to "省份", admin_provinces_path %></li>
+          <li><%= link_to "院校", admin_schools_path %></li>
           <li><%= link_to "学生问卷题目", admin_categories_path %></li>
           <li><%= link_to "学生结果", admin_questionnaires_path %></li>
           <li><%= link_to "企业结果", admin_corps_path %></li>

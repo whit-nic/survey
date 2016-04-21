@@ -4,7 +4,7 @@
       = f.error_notification
       
       .form-inputs
-      = f.input :q1
+      == render 'school'
       = f.input :q2, collection: [['一产', 1], ['二产', 2], ['三产', 3], ['其他', 4]],as: :radio_buttons
       = f.input :q3, collection: [['大型企业', 1], ['中型企业', 2], ['小型企业', 3], ['其他', 4]],as: :radio_buttons
       = f.input :q4, collection: [['是', 1], ['否', 2]],as: :radio_buttons

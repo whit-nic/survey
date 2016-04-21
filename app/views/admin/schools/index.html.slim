@@ -1,0 +1,12 @@
+- if @schools.present?
+  table.table.table-bordered.table-hover.table-stripped
+    thead
+      tr
+        th 省份
+        th 院校名称
+        th 编辑
+        th 删除
+    tbody
+      = render @schools
+    
+== link_to "增加院校", new_admin_school_path, class: "btn btn-primary"

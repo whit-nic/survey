@@ -1,0 +1,11 @@
+- if @provs.present?
+  table.table.table-bordered.table-hover.table-stripped
+    thead
+      tr
+        th 名称
+        th 编辑
+        th 删除
+    tbody
+      = render @provs
+    
+== link_to "增加省份", new_admin_province_path, class: "btn btn-primary"

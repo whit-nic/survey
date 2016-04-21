@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415050713) do
+ActiveRecord::Schema.define(version: 20160421030537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(version: 20160415050713) do
     t.inet     "ip"
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questionnaires", force: :cascade do |t|
     t.inet     "ip"
     t.hstore   "data"
@@ -86,6 +92,15 @@ ActiveRecord::Schema.define(version: 20160415050713) do
 
   add_index "questions", ["category_id"], name: "index_questions_on_category_id", using: :btree
 
+  create_table "schools", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "province_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "schools", ["province_id"], name: "index_schools_on_province_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "name"
@@ -97,4 +112,5 @@ ActiveRecord::Schema.define(version: 20160415050713) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "questions", "categories"
+  add_foreign_key "schools", "provinces"
 end
